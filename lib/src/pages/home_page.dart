@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cubos Academy - Desafio 003'),
+        brightness: Brightness.dark,
         centerTitle: true,
       ),
       // !
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                   width: 75, // ! Verificar caso precise remover
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Colors.blue,
+                    color: Colors.white,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(.5),
