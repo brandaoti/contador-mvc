@@ -29,11 +29,45 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  // ?
-  void clean() {
+  // ? Limpar contador
+  void _clean() {
     setState(() {
       _count = 0;
     });
+  }
+
+  // ? AlertDialog
+  void _alertDialog() {
+    showDialog(
+      context: context,
+      builder: (ctx) {
+        return AlertDialog(
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(Icons.warning_rounded, color: Colors.red, size: 50),
+              Text('Limpar contador...')
+            ],
+          ),
+          content: FittedBox(
+              child: Text('Tem certeza que deseja executar essa ação?')),
+          actions: [
+            TextButton(
+                child: Text('Sim',
+                    style: TextStyle(color: Theme.of(context).accentColor)),
+                onPressed: () {
+                  _clean();
+                  Navigator.pop(context);
+                }),
+            TextButton(
+              child: Text('Não',
+                  style: TextStyle(color: Theme.of(context).accentColor)),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -49,6 +83,7 @@ class _HomePageState extends State<HomePage> {
       body: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          // * Contador
           Expanded(
             flex: 3,
             child: Column(
@@ -78,6 +113,8 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+
+          // * Botões
           Expanded(
             flex: 1,
             child: Column(
@@ -119,9 +156,10 @@ class _HomePageState extends State<HomePage> {
 
       // ? Action Button
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.refresh_rounded),
-        splashColor: Colors.red,
-        onPressed: clean,
+        child: Icon(Icons.warning_amber_rounded, color: Colors.white, size: 30),
+        backgroundColor: Colors.red,
+        tooltip: 'Limpar contador',
+        onPressed: _alertDialog,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
