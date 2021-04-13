@@ -1,3 +1,4 @@
+import 'package:desafio003/src/shared/components/FAB_comp.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,12 +35,12 @@ class _HomePageState extends State<HomePage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            FloatingActionButton(
-              child: Icon(Icons.add),
+            FloatActionButton(
+              icon: Icons.add,
               onPressed: () {},
             ),
-            FloatingActionButton(
-              child: Icon(Icons.remove),
+            FloatActionButton(
+              icon: Icons.remove,
               onPressed: () {},
             ),
           ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FloatActionButton extends StatelessWidget {
-  final Widget icon;
+  final IconData icon;
   final Function onPressed;
 
   const FloatActionButton({
@@ -13,7 +13,7 @@ class FloatActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      child: icon,
+      child: Icon(icon),
       onPressed: onPressed,
     );
   }
