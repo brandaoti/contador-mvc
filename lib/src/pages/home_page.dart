@@ -9,6 +9,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _count = 0;
+
+  // ? Método para add
+  void _add() {
+    setState(() {
+      _count++;
+    });
+  }
+
+  // ? Método para diminuir
+  void _remove() {
+    setState(() {
+      _count--;
+
+      if (_count < 0) {
+        _count = 0;
+      }
+    });
+  }
+
+  // ?
+  void clean() {
+    setState(() {
+      _count = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Text(
-                  '29',
+                  '$_count',
                   style: TextStyle(
                     fontSize: 96,
                     shadows: [
@@ -75,11 +102,11 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       FloatActionButton(
                         icon: Icons.add,
-                        onPressed: () {},
+                        onPressed: _add,
                       ),
                       FloatActionButton(
                         icon: Icons.remove,
-                        onPressed: () {},
+                        onPressed: _remove,
                       ),
                     ],
                   ),
@@ -92,9 +119,9 @@ class _HomePageState extends State<HomePage> {
 
       // ? Action Button
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.refresh),
+        child: Icon(Icons.refresh_rounded),
         splashColor: Colors.red,
-        onPressed: () {},
+        onPressed: clean,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
