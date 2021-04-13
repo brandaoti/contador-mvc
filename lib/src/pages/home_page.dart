@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   // ? Método para diminuir
-  void _remove() {
+  void _sub() {
     setState(() {
       _count--;
 
@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       FloatActionButton(
                         icon: Icons.remove,
-                        onPressed: _remove,
+                        onPressed: _sub,
                       ),
                     ],
                   ),
