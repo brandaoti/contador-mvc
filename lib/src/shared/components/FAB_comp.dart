@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class FloatingActionButtonComp extends StatelessWidget {
+class FloatActionButton extends StatelessWidget {
   final Widget icon;
   final Function onPressed;
 
-  const FloatingActionButtonComp({
+  const FloatActionButton({
     Key key,
     @required this.icon,
     @required this.onPressed,
