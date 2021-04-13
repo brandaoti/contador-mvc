@@ -25,7 +25,7 @@
 
 * <i><h3><strong>Desafio</strong></h3></i>
   
-        Treinar funções e classes melhorando nosso contador. Na aula M01 - A04 - Reconstruindo o App Demo nós tivemos como exercício a adição de um botão e a lógica para reduzir o contador.
+Treinar funções e classes melhorando nosso contador. Na aula M01 - A04 - Reconstruindo o App Demo nós tivemos como exercício a adição de um botão e a lógica para reduzir o contador.
 
 * Deve ser criado um componente para o FloatActionButton. Lmebre-se que ele vai precisar receber o Icon e a Função onPressed como parâmetro.
   
