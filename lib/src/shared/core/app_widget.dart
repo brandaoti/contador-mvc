@@ -7,7 +7,10 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(accentColor: Colors.amberAccent),
+      theme: ThemeData(
+        primaryColor: Color(0xFF344955),
+        accentColor: Color(0xFFF9AA33),
+      ),
       home: HomePage(),
     );
   }

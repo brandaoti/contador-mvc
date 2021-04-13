@@ -27,8 +27,27 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('Testando'),
-                Text('Testando'),
+                Text(
+                  'Contador',
+                  style: TextStyle(
+                    fontSize: 48,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                Text(
+                  '29',
+                  style: TextStyle(
+                    fontSize: 96,
+                    shadows: [
+                      Shadow(
+                        color: Colors.grey.withOpacity(.5),
+                        blurRadius: 2,
+                        offset: Offset(2, 3),
+                      ),
+                    ],
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
               ],
             ),
           ),
@@ -42,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                   width: 75, // ! Verificar caso precise remover
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Colors.white,
+                    color: Theme.of(context).primaryColor.withOpacity(.9),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(.5),
@@ -82,7 +101,16 @@ class _HomePageState extends State<HomePage> {
       // ? Navigator bar
       bottomNavigationBar: Container(
         height: 80,
-        color: Colors.blue,
+        decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(.8),
+              blurRadius: 4,
+              offset: Offset(0, -2),
+            ),
+          ],
+        ),
       ),
     );
   }
