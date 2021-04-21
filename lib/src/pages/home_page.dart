@@ -11,29 +11,26 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _count = 0;
 
+  // ? Closure
+  void operation(Function func) {
+    setState(() {
+      func();
+    });
+  }
+
   // ? Método para add
   void _add() {
-    setState(() {
-      _count++;
-    });
+    _count++;
   }
 
   // ? Método para diminuir
   void _sub() {
-    setState(() {
-      _count--;
-
-      if (_count < 0) {
-        _count = 0;
-      }
-    });
+    _count <= 0 ? _count = 0 : _count--;
   }
 
   // ? Limpar contador
   void _clean() {
-    setState(() {
-      _count = 0;
-    });
+    _count = 0;
   }
 
   // ? AlertDialog
@@ -56,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text('Sim',
                     style: TextStyle(color: Theme.of(context).accentColor)),
                 onPressed: () {
-                  _clean();
+                  operation(_clean);
                   Navigator.pop(context);
                 }),
             TextButton(
@@ -139,11 +136,11 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       FloatActionButton(
                         icon: Icons.add,
-                        onPressed: _add,
+                        onPressed: () => operation(_add),
                       ),
                       FloatActionButton(
                         icon: Icons.remove,
-                        onPressed: _sub,
+                        onPressed: () => operation(_sub),
                       ),
                     ],
                   ),
