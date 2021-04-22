@@ -1,4 +1,4 @@
-import 'package:desafio003/src/pages/home_page.dart';
+import 'package:desafio003/src/views/home_page.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
