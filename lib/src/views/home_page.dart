@@ -1,4 +1,4 @@
-import 'package:desafio003/src/shared/components/FAB_comp.dart';
+import 'package:desafio003/src/shared/components/counter_floating_button.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
