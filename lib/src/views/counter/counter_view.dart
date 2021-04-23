@@ -1,39 +1,15 @@
-import 'package:desafio003/src/shared/components/FAB_comp.dart';
+import 'package:desafio003/src/shared/components/counter_floating_button.dart';
+import 'package:desafio003/src/views/counter/counter_controller.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
-
+class CounterView extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _CounterViewState createState() => _CounterViewState();
 }
 
-class _HomePageState extends State<HomePage> {
-  int _count = 0;
+class _CounterViewState extends State<CounterView> {
+  final controller = CounterController();
 
-  // ? Closure
-  void operation(Function func) {
-    setState(() {
-      func();
-    });
-  }
-
-  // ? Método para add
-  void _add() {
-    _count++;
-  }
-
-  // ? Método para diminuir
-  void _sub() {
-    _count <= 0 ? _count = 0 : _count--;
-  }
-
-  // ? Limpar contador
-  void _clean() {
-    _count = 0;
-  }
-
-  // ? AlertDialog
   void _alertDialog() {
     showDialog(
       context: context,
@@ -53,7 +29,9 @@ class _HomePageState extends State<HomePage> {
                 child: Text('Sim',
                     style: TextStyle(color: Theme.of(context).accentColor)),
                 onPressed: () {
-                  operation(_clean);
+                  setState(() {
+                    controller.cleanCounter;
+                  });
                   Navigator.pop(context);
                 }),
             TextButton(
@@ -94,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Text(
-                  '$_count',
+                  controller.counter,
                   style: TextStyle(
                     fontSize: 96,
                     shadows: [
@@ -136,11 +114,19 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       FloatActionButton(
                         icon: Icons.add,
-                        onPressed: () => operation(_add),
+                        onPressed: () {
+                          setState(() {
+                            controller.incrementCounter();
+                          });
+                        },
                       ),
                       FloatActionButton(
                         icon: Icons.remove,
-                        onPressed: () => operation(_sub),
+                        onPressed: () {
+                          setState(() {
+                            controller.decrementCounter;
+                          });
+                        },
                       ),
                     ],
                   ),
