@@ -2,7 +2,7 @@
    <br>Cubos Academy<br><br>
 </h1>
 
-<p align="center"> Modularizar o Contador </p> <br>
+<p align="center"> Counter com MVC </p> <br>
 
 
 [//]: # (Adicione seus gifs / imagens aqui:)
@@ -23,23 +23,25 @@
 ## **Informações:**
 [//]: # (Descreva seu objetivo e o que foi usado no projeto:)
 
+* <i><h3><strong>Nova Feature MVC</strong></h3></i>
+  
+<font color="orange"><i><h4><strong>Foi criado estrutura MVC neste app, usando classes counterModel, counterController e counterView, seguindo os padrões.</strong></h3></i></font>
+
 * <i><h3><strong>Desafio</strong></h3></i>
   
-Treinar funções e classes melhorando nosso contador. Na aula M01 - A04 - Reconstruindo o App Demo nós tivemos como exercício a adição de um botão e a lógica para reduzir o contador.
-
-* Deve ser criado um componente para o FloatActionButton. Lmebre-se que ele vai precisar receber o Icon e a Função onPressed como parâmetro.
+* Criar uma nova branch mvc. Na pasta do projeto counter, executar o comando ‘git checkout -b mvc’.
   
-* A função que realiza a operação deve ser a mesma e receber a operação como parametro. Ou seja, não devemos ter uma função de soma e outra de subtração, vamos ter uma única função que vai realizar a operação correta de acordo com um parâmetro.
+* Você deve fazer o que fizemos nos vídeos da aula. Criando o counterController.dart, o counterModel.dart e implementar as funções conforme a aula.
 
-<h2> <strong>Quer ir adiante?</strong> </h2>
+* Você deve implementar a funcão de Subtração e alterar nossa view para o botão ‘-’ funcionar.
 
-* Criar funções para cada operação (add e sub) e passá-la como parâmetro para a função que executa a operação.
+* Você deve criar um arquivo ‘counterView.dart’ e passar o código da classe ‘CounterScreen’ para este novo arquivo, mantendo o funcionamento do app.
+
+
 
 <hr>
 
-* [X] Criar uma branch para o exercicio M01 - A06 git checkout -b nome-da-branch para criar uma branch nova
-
-* [x] Adicionar as mudanças aos commits (git add . para adicionar todos os arquivos ou git add nome_do_arquivo para adicionar um arquivo específico)
+* [X] Adicionar as mudanças aos commits (git add . para adicionar todos os arquivos ou git add nome_do_arquivo para adicionar um arquivo específico)
 
 * [x] Commitar a cada mudança significativa ou na finalização do exercício (git commit -m "Mensagem do commit")
   
@@ -52,3 +54,4 @@ Treinar funções e classes melhorando nosso contador. Na aula M01 - A04 - Recon
 
 - <code><img height="20" src="https://github.com/brandaoti/organizar-github/blob/main/img/flutter.png"></code> **Flutter**
 - <code><img height="20" src="https://github.com/brandaoti/organizar-github/blob/main/img/dart.png"></code> **Dart**
+
