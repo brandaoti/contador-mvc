@@ -29,6 +29,9 @@ class _CounterViewState extends State<CounterView> {
                 child: Text('Sim',
                     style: TextStyle(color: Theme.of(context).accentColor)),
                 onPressed: () {
+                  setState(() {
+                    controller.cleanCounter;
+                  });
                   Navigator.pop(context);
                 }),
             TextButton(
@@ -69,7 +72,7 @@ class _CounterViewState extends State<CounterView> {
                   ),
                 ),
                 Text(
-                  controller.getCounter(),
+                  controller.counter,
                   style: TextStyle(
                     fontSize: 96,
                     shadows: [
@@ -121,7 +124,7 @@ class _CounterViewState extends State<CounterView> {
                         icon: Icons.remove,
                         onPressed: () {
                           setState(() {
-                            controller.decrementCounter();
+                            controller.decrementCounter;
                           });
                         },
                       ),
@@ -139,7 +142,7 @@ class _CounterViewState extends State<CounterView> {
         child: Icon(Icons.warning_amber_rounded, color: Colors.white, size: 30),
         backgroundColor: Colors.red,
         tooltip: 'Limpar contador',
-        onPressed: () => print('Clicou!'),
+        onPressed: _alertDialog,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 

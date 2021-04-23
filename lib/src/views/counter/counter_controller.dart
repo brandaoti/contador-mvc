@@ -4,7 +4,7 @@ class CounterController {
   final model = CounterModel();
 
   // ? Metodo para acessar o valor do model
-  String getCounter() {
+  String get counter {
     return model.counter.toString();
   }
 
@@ -13,11 +13,11 @@ class CounterController {
     model.operationCounter(_add);
   }
 
-  void decrementCounter() {
+  void get decrementCounter {
     model.operationCounter(_sub);
   }
 
-  void clearCounter() {
+  void get cleanCounter {
     model.operationCounter(_clean);
   }
 
